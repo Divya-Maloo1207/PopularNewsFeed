@@ -1,0 +1,15 @@
+{
+    "results": [{
+        "title": "TestTitle",
+        "abstract": "Summary",
+        "url":"https://www.nytimes.com/2022/06/30/science/listeria-outbreak-florida.html",
+        "section":"Science",
+        "media":[{
+            "media-metadata": [{
+                "url":"https://static01.nyt.com/images/2022/06/30/multimedia/-30xp-listeria-1/-30xp-listeria-1-thumbStandard.jpg",
+                "height":75,
+                "width":75
+            }]
+        }]
+    }]
+}
