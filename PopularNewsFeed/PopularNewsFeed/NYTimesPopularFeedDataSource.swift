@@ -10,7 +10,12 @@ class NYTimesPopularFeedDataSource: NSObject, UITableViewDataSource{
         super.init()
 
         request.fetchPopularFeed {[weak self] response in
-            self?.data = response.resultData?.result
+            
+//            guard let m =  else {
+//                self?.fetchCompletion()
+//                return
+//            }
+             self?.data = response.resultData?.result
             self?.fetchCompletion()
         }
     }

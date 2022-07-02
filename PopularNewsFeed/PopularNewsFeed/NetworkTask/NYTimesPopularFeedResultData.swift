@@ -10,7 +10,7 @@ class NYTimesPopularFeedResponseData: Decodable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         result = try container.decodeIfPresent(
-            Array<NYTimesPopularFeedResultData>.self,
+            [NYTimesPopularFeedResultData].self,
             forKey: .result
         )
     }
@@ -42,7 +42,7 @@ class NYTimesPopularFeedResultData: Decodable {
 }
 
 class Media: Decodable {
-    let mediaMetadata: MediaMetadata?
+    let mediaMetadata: [MediaMetadata]?
 
     private enum CodingKeys: String, CodingKey {
         case mediaMetadata = "media-metadata"
@@ -50,7 +50,7 @@ class Media: Decodable {
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        mediaMetadata = try container.decodeIfPresent(MediaMetadata.self, forKey: .mediaMetadata)
+        mediaMetadata = try container.decodeIfPresent(Array<MediaMetadata>.self, forKey: .mediaMetadata)
     }
 }
 

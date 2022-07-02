@@ -23,10 +23,11 @@ class NYTimesPopularFeedResultDataTests: XCTestCase {
 
         XCTAssertNoThrow(try JSONDecoder().decode(NYTimesPopularFeedResponseData.self, from: data))
 
-        let decoder =
-        \JSONDecoder()
+        let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let dataModel = try? decoder.decode(NYTimesPopularFeedResponseData.self, from: data)
-        XCTAssertEqual(dataModel?.result?.count, 1) 
+        XCTAssertEqual(dataModel?.result?.count, 1)
+        XCTAssertEqual(dataModel?.result?[0].media?.count, 1)
+        XCTAssertEqual(dataModel?.result?[0].media?[0].mediaMetadata?.count, 3)
     }
 }

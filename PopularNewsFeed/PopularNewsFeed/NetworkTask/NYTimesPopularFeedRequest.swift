@@ -57,6 +57,7 @@ class NYTimesPopularFeedRequest {
 
                 completion(NYTimesPopularFeedResponse(resultData: resultData, isSuccessful: true))
             } catch {
+                print(error)
                 completion(NYTimesPopularFeedResponse(isSuccessful: false))
             }
         }
