@@ -4,6 +4,7 @@ class ViewController: UIViewController, UITableViewDelegate {
     var tableView = UITableView()
     let spinner = UIActivityIndicatorView(style: .large)
     private(set) var isFetched = false
+
     lazy var dataSource: NYTimesPopularFeedDataSource = {
         return NYTimesPopularFeedDataSource { [weak self] in
             guard let strongSelf = self else {
